@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class FINAL {
+public class TAREASection2 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);  // Inicialización para el uso de Scanner
