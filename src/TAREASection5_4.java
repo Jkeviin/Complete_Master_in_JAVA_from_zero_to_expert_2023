@@ -28,7 +28,7 @@ opciones.put("Salir", 5);
 Object[] opArreglo = opciones.keySet().toArray();
 
 Object opcion = JOptionPane.showInputDialog(null,
-                    "Seleccione un Opción",
+                    "Seleccione una Opción",
                      "Mantenedor de Productos",
                      JOptionPane.INFORMATION_MESSAGE, null, opArreglo, opArreglo[0]);
 
@@ -71,7 +71,7 @@ Usar un do while para iterar hasta que la opción sea salir, cada vez que se sel
 
             Object[] opArreglo = opciones.keySet().toArray();
             Object opcion = JOptionPane.showInputDialog(null,
-                    "Seleccione un Operación", "Mantenedor de Usuario", JOptionPane.INFORMATION_MESSAGE, null, opArreglo, opArreglo[0]);
+                    "Seleccione una Operación", "Mantenedor de Usuario", JOptionPane.INFORMATION_MESSAGE, null, opArreglo, opArreglo[0]);
 
             if (opcion == null) {
                 JOptionPane.showMessageDialog(null, "Debe seleccionar una operación");
