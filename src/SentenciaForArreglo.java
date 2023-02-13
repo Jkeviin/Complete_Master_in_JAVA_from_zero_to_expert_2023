@@ -1,31 +1,34 @@
+import javax.swing.*;
+
 public class SentenciaForArreglo {
     public static void main(String[] args) {
 
-        for (int i = 0; i <= 10; i++) {
-            System.out.println("i = "+ i);
+        String[] nombres = {"Kevin", "Pepe", "Maria", "Paco", "Lilo", "Pato", "Pepa", "Bea"};
+
+        int count = nombres.length;
+
+        for (int i = 0; i < count; i++) {
+            if(nombres[i].equalsIgnoreCase("kevin") || nombres[i].equalsIgnoreCase("pepe")) continue;
+            System.out.println(i + ".- " +nombres[i]);
         }
+        
+        String buscar = JOptionPane.showInputDialog("Ingrese un nombre, ejemplo \"Pepe\" o \"Maria\":");
+        System.out.println("buscar = " + buscar);
 
-        for (int i = 10; i >= 0; i--) {
-            System.out.println("i = "+ i);
-        }
+        boolean encontrado = false;
 
-        for(int i = 1, j = 10; i < j; i++, j--){
-            System.out.println(i + " - " + j);
-
-            /*  1 - 10
-                2 - 9
-                3 - 8
-                4 - 7
-                5 - 6   */
-        }
-
-        for(int i = 0; i <= 10; i++) {
-
-            if(!(i % 2 == 0)) {  // Sí no es par saltar código y seguir con el bule
-                continue;
+        for (int i = 0; i < count; i++) {
+            if(nombres[i].equalsIgnoreCase(buscar)){
+                encontrado = true;
+                break;
             }
-            System.out.println("i = "+ i);
         }
 
+        if(encontrado){
+            JOptionPane.showMessageDialog(null, buscar + " fue encontrado.");
+        }else{
+            JOptionPane.showMessageDialog(null, buscar + " NO existe en el sistema.");
+        }
+        
     }
 }
