@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class TAREASection3 {
+public class TAREASection3_2 {
     public static void main(String[] args) {
         /*
                 EJERCICIO
@@ -20,23 +20,22 @@ public class TAREASection3 {
 
         Scanner scanner = new Scanner(System.in);  // Inicialización para el uso de Scanner
 
-        System.out.println("Ingrese el nombre del PRIMER integrante de la familia: ");
-        String integrante1 = scanner.nextLine();
+        String resultado = "";
 
-        System.out.println("Ingrese el nombre del SEGUNDO integrante de la familia: ");
-        String integrante2 = scanner.nextLine();
+        for (int i = 0; i < 3 ; i++ ){
+            System.out.println("Ingrese el nombre del integrante " + i + " de la familia: ");
+            String nombre = scanner.nextLine();
 
-        System.out.println("Ingrese el nombre del TERCERO integrante de la familia: ");
-        String integrante3 = scanner.nextLine();
+            resultado += transformar(nombre);
 
-
-        String p1 = integrante1.substring(1, 2).toUpperCase().concat(".").concat(integrante1.substring(integrante1.length() - 2));
-        String p2 = integrante2.substring(1, 2).toUpperCase().concat(".").concat(integrante2.substring(integrante2.length() - 2));
-        String p3 = integrante3.substring(1, 2).toUpperCase().concat(".").concat(integrante3.substring(integrante3.length() - 2));
-
-        String resultado = p1.concat("_" + p2.concat("_" + p3));
-
+            if(i<2){
+                resultado = resultado.concat("_");
+            }
+        }
         System.out.println("resultado = " + resultado);
+    }
 
+    static String transformar(String nombre){
+        return nombre.substring(1, 2).toUpperCase().concat(".").concat(nombre.substring(nombre.length() - 2));
     }
 }
