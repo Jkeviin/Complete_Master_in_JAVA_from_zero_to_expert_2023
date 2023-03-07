@@ -1,9 +1,6 @@
 package co.kevorg.appfacturas;
 
-import co.kevorg.appfacturas.modelo.Cliente;
-import co.kevorg.appfacturas.modelo.Factura;
-import co.kevorg.appfacturas.modelo.ItemFactura;
-import co.kevorg.appfacturas.modelo.Producto;
+import co.kevorg.appfacturas.modelo.*;
 
 import java.util.Scanner;
 
@@ -21,31 +18,23 @@ public class EjemploFactura {
         Factura factura = new Factura(desc, cliente);
 
         Producto producto;
-        String nombre;
-        float precio;
-        int cantidad;
 
         System.out.println("\n");
 
         for (int i = 0; i < 5; i++) {
             producto = new Producto();
             System.out.print("Ingrese producto N°"+producto.getCodigo() + ": ");
-            nombre = sc.next();
-            producto.setNombre(nombre);
+            producto.setNombre(sc.next());
 
             System.out.print("Ingrese el precio: ");
-            precio = sc.nextFloat();
-            producto.setPrecio(precio);
+            producto.setPrecio(sc.nextFloat());
 
             System.out.print("Ingrese la cantidad: ");
-            cantidad = sc.nextInt();
 
-            ItemFactura item = new ItemFactura(cantidad,producto);
-            factura.addItemFactura(item);
-
+            factura.addItemFactura(new ItemFactura(sc.nextInt() ,producto));
             System.out.println();
         }
 
-        System.out.println(factura.generarDetalle());
+        System.out.println(factura);
     }
 }
